@@ -130,7 +130,7 @@ export default {
 			})
 			.then((res) => {
 				console.log(res.data);
-				this.Provices = res.data;
+				this.Provices = res.data.data;
 			});
 	},
 };
