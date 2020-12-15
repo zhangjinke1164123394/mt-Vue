@@ -23,8 +23,8 @@
 					<div class="name">{{ item.value }}</div>
 				</template>
 			</el-autocomplete>
-			<router-link :to="{name:'searchRes'}">
-				<div class="searchBtn">搜索</div>
+			<router-link :to="{ name: 'searchRes' }">
+				<div class="searchBtn" @click="searchBtn()">搜索</div>
 			</router-link>
 		</el-col>
 	</el-row>
@@ -37,6 +37,7 @@ export default {
 			restaurants: [],
 			isHot: true,
 			state: "",
+			time: new Date().getTime(),
 		};
 	},
 	methods: {
@@ -50,6 +51,14 @@ export default {
 		},
 		changeInput(e) {
 			console.log(e);
+		},
+		searchBtn() {
+			let nowTime = new Date().getTime();
+			if (nowTime - this.time < 1000) {
+				return;
+			}
+			console.log(1);
+			this.time = nowTime;
 		},
 		createFilter(queryString) {
 			return (restaurant) => {
