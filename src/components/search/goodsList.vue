@@ -8,8 +8,9 @@
 						<el-row :gutter="10">
 							<el-col :span="6">
 								<img
+                class="lazyImg"
 									style="border-radius: 4px"
-									:src="item.img"
+									:data-src="item.img"
 									alt=""
 								/>
 							</el-col>
