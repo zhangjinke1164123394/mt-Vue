@@ -3,7 +3,7 @@
 		<el-card class="box-card">
 			<router-link :to="{name:'detail'}">
 				<div v-for="item in detail" :key="item.id" class="wrap">
-					<img class="conImg" :src="item.img" alt="" />
+					<img class="conImg lazyImg" :data-src="item.img" alt="" />
 					<div class="text">
 						<div class="conTitle">
 							{{ item.title }}
